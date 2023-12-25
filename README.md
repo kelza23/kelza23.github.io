@@ -1,5 +1,10 @@
 ### Hi there 👋
 
+- 🔭 I’m currently working as a Research Fellow in Operations Analytics at Institute for Intelligent Systems Research and Innovation, Deakin Universit, Australia.
+- 🌱 I’m currently learning computer vision, deep learning and human performance.
+- 👯 I’m looking to collaborate on computer vision and deep learning
+- ⚡ Fun fact: I am an Ultimate Frisbee player/coach.
+
 <!--
 **kelza23/kelza23** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
