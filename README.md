@@ -5,7 +5,7 @@
 - 👯 I’m looking to collaborate on computer vision and deep learning
 - ⚡ Fun fact: I am an Ultimate Frisbee player/coach.
 
-<a href="https://app.daily.dev/kelza723"><img src="https://api.daily.dev/devcards/e91e7f9712d747ada0abf53e7185c2f7.png?r=axd" width="400" alt="Kelvin's Dev Card"/></a>
+<a href="https://app.daily.dev/kelza23"><img src="https://api.daily.dev/devcards/e91e7f9712d747ada0abf53e7185c2f7.png?r=2i6" width="400" alt="Kelvin's Dev Card"/></a>
 
 <!--
 **kelza23/kelza23** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
