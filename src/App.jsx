@@ -156,25 +156,27 @@ const App = () => {
       <section id="experience" className="py-32 bg-white">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-20">
-            {/* Left Column: Header */}
+            {/* Left Column: Header (sticky with opaque background to prevent overlap) */}
             <div className="lg:w-1/3">
-              <h2 className="text-4xl font-black text-slate-900 mb-6 sticky top-32 leading-tight">
-                Professional <br/>
-                <span className="text-blue-600">Trajectory.</span>
-              </h2>
-              <p className="text-slate-500 mb-8 font-medium">
-                A non-linear path from academic labs to industrial sites and athletic fields.
-              </p>
-              
-              <div className="grid gap-4">
-                {aiSpecialties.map((item, idx) => (
-                  <div key={idx} className="flex items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
-                    <div className="text-blue-600 mr-3">{IconMap[item.icon]}</div>
-                    <div>
-                      <div className="text-xs font-bold uppercase tracking-wider text-slate-900">{item.title}</div>
+              <div className="md:sticky md:top-28 bg-white/95 backdrop-blur-sm border border-slate-100 shadow-sm rounded-2xl p-6">
+                <h2 className="text-4xl font-black text-slate-900 mb-4 leading-tight">
+                  Professional <br/>
+                  <span className="text-blue-600">Trajectory.</span>
+                </h2>
+                <p className="text-slate-500 mb-8 font-medium">
+                  A non-linear path from academic labs to industrial sites and athletic fields.
+                </p>
+                
+                <div className="grid gap-4">
+                  {aiSpecialties.map((item, idx) => (
+                    <div key={idx} className="flex items-center p-3 bg-slate-50 rounded-xl border border-slate-100">
+                      <div className="text-blue-600 mr-3">{IconMap[item.icon]}</div>
+                      <div>
+                        <div className="text-xs font-bold uppercase tracking-wider text-slate-900">{item.title}</div>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 

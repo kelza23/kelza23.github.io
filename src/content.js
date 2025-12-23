@@ -138,15 +138,15 @@ export const philosophy = [
 
 export const talks = [
   {
-    title: "Smarter Than Ever: The Future of AI Applications",
-    venue: "UCSI University KL Campus",
-    date: "March 2025",
-    topic: "AI-based Decision Support Systems"
-  },
-  {
     title: "Decision Support Systems for Rolling Stock Maintenance",
     venue: "Telkom University Purwokerto Campus",
     date: "June 2025",
+    topic: "AI-based Decision Support Systems"
+  },
+  {
+    title: "Smarter Than Ever: The Future of AI Applications",
+    venue: "UCSI University KL Campus",
+    date: "March 2025",
     topic: "AI-based Decision Support Systems"
   }
 ];
