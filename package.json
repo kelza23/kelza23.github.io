@@ -1,6 +1,7 @@
 {
   "name": "kelza23",
   "private": true,
+  "type": "module",
   "version": "0.0.0",
   "homepage": "https://kelza23.github.io/kelza23/",
   "scripts": {
