@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Navy Blue Color (#000080) -->
+  
+  <!-- Simple Hexagon Frame -->
+  <path 
+    d="M50 8 L88 30 L88 70 L50 92 L12 70 L12 30 Z" 
+    fill="none" 
+    stroke="#000080" 
+    stroke-width="4" 
+    stroke-linejoin="round"
+  />
+  
+  <!-- Bold KC Typography -->
+  <text 
+    x="50%" 
+    y="52%" 
+    text-anchor="middle" 
+    dominant-baseline="middle" 
+    font-family="Arial, sans-serif" 
+    font-weight="900" 
+    font-size="32" 
+    fill="#000080"
+    letter-spacing="-1"
+  >
+    KC
+  </text>
+</svg>
