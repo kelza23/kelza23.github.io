@@ -1,8 +1,10 @@
 export const profile = {
   name: "Yit Hong Choo (Kelvin)",
   title: "AI Technical Specialist | PhD in Engineering",
+  logo: "/logo.svg",
+  motto: "Everything you don't know is something you can learn.",
   summary:
-    "Strategic AI leader with a PhD in Engineering and a track record of commercialising advanced AI/ML research into industry-aligned programs. Expert in full-cycle AI solution development—from market intelligence and opportunity qualification through technical architecture, pricing, and post-award delivery. Proven success in leading cross-functional teams to build high-value partnerships, securing over $2M in collaborative grants and industry contracts.",
+    "I represent a new breed of researcher—combining deep academic expertise in Artificial Intelligence with a driving passion for creating tangible, real-world applications. My career is a playbook on translating theoretical knowledge into practical solutions that optimize complex systems, from high-speed rail networks to elite athletic performance.",
   email: "kelvinchoo_96@hotmail.com",
   linkedin: "kelvincyh",
   github: "kelza23",
@@ -14,63 +16,137 @@ export const experience = [
     role: "AI Technical Specialist",
     company: "Swinburne University of Technology",
     period: "Oct 2025 - Present",
+    type: "Industry Interface",
     description:
-      "Bridging the gap between cutting-edge AI research and industry needs. Translating institutional technical capabilities into market-aligned project proposals and scalable AI products.",
+      "Acting as the bridge between academia and the defence sector. My role is to translate institutional capabilities into market-aligned projects, ensuring that cutting-edge research finds its way into real-world application.",
     highlights: [
-      "Lead AI-focused proposal development and pre-award commercial structuring.",
+      "Lead proposal development and pre-award commercial structuring.",
       "Identify and qualify multidisciplinary AI opportunities across engineering and applied sciences.",
-      "Coordinate high-level stakeholder engagement, workshops, and industry delegations.",
+      "Facilitate cross-functional collaboration to deliver pilot demonstrations and customer trials.",
     ],
   },
   {
     role: "Research Fellow - AI & Operations Analytics",
     company: "IISRI, Deakin University",
     period: "Aug 2023 - Sept 2025",
+    type: "Industrial Impact",
     description:
-      "Led industry-funded R&D programs deploying AI, computer vision, and predictive modelling to deliver intelligent decision support systems.",
+      "A tenure defined by the translation of complex AI research into practical tools. I led industry-funded programs that deployed AI, optimisation, and computer vision to solve critical operational bottlenecks for major partners like Alstom and Downer Group.",
     highlights: [
-      "Secured and managed multi-stakeholder projects totalling >AUD 2M.",
-      "Led the R&D of Alstom Australia's Safe2Go DriverAssist, a markerless AI safety system.",
-      "Supervised HDR students in developing advanced lightweight Deep Learning models for edge computing.",
+      "Secured and contributed to >AUD 2M in collaborative industry grants.",
+      "Lead Chief Investigator for FLAIM Systems defence project evaluating VR efficacy in land mine sweeping training.",
+      "Supervised HDR students to develop lightweight Deep Learning models for edge computing.",
+    ],
+  },
+  {
+    role: "Head Coach & Strategy Lead",
+    company: "Victorian Representative Teams / Ultimate Victoria",
+    period: "2021 - Present",
+    type: "Passion Project",
+    description:
+      "Ultimate Frisbee is my laboratory for leadership and analytics. I merge my technical skills with passion, using computer vision to extract biomechanical data (RFD, RSI) to give my teams a unique analytical edge.",
+    highlights: [
+      "Head Coach for the 2023 Australian Under-22 Ultimate Championships.",
+      "Recipient of the Ellipsis Coaching Scholarship for excellence in tactical development.",
+      "Implemented evidence-based training programs using video analytics to prevent injuries and optimize power output.",
     ],
   },
 ];
 
 export const aiSpecialties = [
-  { title: "AI Strategy & Translation", icon: "Database", desc: "Converting complex mathematical and ML models into actionable business solutions and product roadmaps." },
-  { title: "Intelligent Systems", icon: "Cpu", desc: "Designing multi-objective AI architectures that balance competing industrial constraints like cost and reliability." },
-  { title: "Computer Vision Products", icon: "Code", desc: "Developing end-to-end vision systems for passenger safety, sports analytics, and autonomous monitoring." },
-  { title: "Technical Leadership", icon: "Activity", desc: "Leading cross-functional teams and supervising PhD researchers to deliver validated AI prototypes." },
+  { 
+    title: "AI Strategy & Translation", 
+    icon: "Database", 
+    desc: "Converting mathematical models into actionable business value." 
+  },
+  { 
+    title: "Multi-objective Optimisation", 
+    icon: "Cpu", 
+    desc: "Balancing competing constraints (cost vs. time vs. safety) in complex systems." 
+  },
+  { 
+    title: "Vision & Biomechanics", 
+    icon: "Code", 
+    desc: "Extracting structured data from video for safety and performance analysis." 
+  },
+  { 
+    title: "Strategic Leadership", 
+    icon: "Activity", 
+    desc: "Leading cross-functional teams to deliver validated prototypes." 
+  },
 ];
 
 export const projects = [
   {
     title: "SASI Safe2Go DriverAssist",
-    tag: "AI Product Design",
+    partner: "Alstom Australia",
+    tag: "Passenger Safety",
     description:
-      "Led the complete lifecycle of an AI-based passenger safety product using computer vision and edge inference, ensuring compliance with global safety regulations.",
-    tech: ["Computer Vision", "Edge AI", "SRS Design", "CI/CD"],
+      "Led the R&D for a system designed to proactively detect and mitigate safety risks on public transport. I managed the lifecycle from stakeholder engagement to technical design, effectively bridging the gap from a conceptual pilot to a viable prototype focused on edge inference.",
+    tech: ["Computer Vision", "Edge Inference", "R&D Strategy"],
   },
   {
-    title: "AI Sports Performance Analytics",
-    tag: "AI & Leadership",
-    description: "Developed a markerless performance platform using pose estimation to track athlete movements and team coordination for Ultimate Victoria.",
-    tech: ["Pose Estimation", "Object Tracking", "Visual Analytics"],
+    title: "Rollingstock Maintenance DSS",
+    partner: "Downer Group",
+    tag: "Logistics Optimisation",
+    description:
+      "Tackled a critical logistics challenge by transforming complex historical data into an optimized, predictive maintenance schedule. Used machine learning to forecast task durations and custom evolutionary algorithms to derive optimal schedules.",
+    tech: ["Predictive Modelling", "Evolutionary Algorithms", "Python"],
   },
   {
-    title: "Predictive Decision Support",
-    tag: "Optimisation & ML",
-    description: "Built an AI-powered scheduling tool for Downer Group that utilized evolutionary algorithms to optimize complex industrial maintenance.",
-    tech: ["Predictive Modelling", "NSGA-II", "Python"],
+    title: "Markerless Sports Analytics",
+    partner: "Ultimate Victoria",
+    tag: "Sports Tech",
+    description:
+      "Designed a performance platform using pose estimation to analyze athlete technique. Extracted biomechanical data points like Rate of Force Development (RFD) and Reactive Strength Index (RSI) to measure explosive power and agility.",
+    tech: ["Pose Estimation", "Biometrics", "Visual Analytics"],
+  },
+  {
+    title: "VR Training Efficacy",
+    partner: "FLAIM Systems",
+    tag: "Defence / VR",
+    description:
+      "Served as Lead Chief Investigator evaluating the efficacy of Virtual Reality in land mine sweeping training. Provided data-driven insights into how immersive technology can enhance or replace conventional training methods.",
+    tech: ["Virtual Reality", "Data Analysis", "Human Factors"],
   },
 ];
 
 export const capabilities = [
-  "AI Technical Translation",
-  "Commercial R&D Strategy",
-  "Product-to-Market Roadmaps",
-  "Deep Learning (PyTorch/TensorFlow)",
+  "Commercial/Technical AI Translation",
+  "Full-cycle Business Development",
+  "Deep Learning & Pose Estimation",
   "Multi-objective Optimisation",
-  "Stakeholder Engagement",
-  "Ultimate Frisbee Tactical Coaching"
+  "Stakeholder Engagement & Workshop Facilitation",
+  "Biomechanical Data Analysis (RFD/RSI)",
+  "Strategic High-Performance Coaching"
+];
+
+export const philosophy = [
+  {
+    title: "Seek Industry-Aligned Research",
+    desc: "My PhD wasn't confined to a lab; it was integrated with Rail Manufacturing CRC and Downer Group to solve existing business problems. Real-world friction creates the best innovations."
+  },
+  {
+    title: "Develop a Transferable Skillset",
+    desc: "Core skills in AI and optimisation are universal. I've applied the same toolkit to predict train maintenance schedules, evaluate VR landmine training, and analyze athlete biomechanics."
+  },
+  {
+    title: "Integrate Your Passions",
+    desc: "Merging professional expertise with personal passion creates a unique brand. Applying AI to my sport didn't just help the team—it distinguished me as an innovator."
+  }
+];
+
+export const talks = [
+  {
+    title: "Smarter Than Ever: The Future of AI Applications",
+    venue: "UCSI University KL Campus",
+    date: "March 2025",
+    topic: "AI-based Decision Support Systems"
+  },
+  {
+    title: "Unlocking the Dilemma of AI Existence",
+    venue: "Institut Teknologi Telkom Purwokerto",
+    date: "December 2023",
+    topic: "AI Capabilities and Limitations"
+  }
 ];
