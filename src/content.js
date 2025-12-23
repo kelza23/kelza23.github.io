@@ -34,21 +34,21 @@ export const experience = [
       "A tenure defined by the translation of complex AI research into practical tools. I led industry-funded programs that deployed AI, optimisation, and computer vision to solve critical operational bottlenecks for major partners like Alstom and Downer Group.",
     highlights: [
       "Secured and contributed to >AUD 2M in collaborative industry grants.",
-      "Lead Chief Investigator for FLAIM Systems defence project evaluating VR efficacy in land mine sweeping training.",
+      "Lead Chief Investigator for FLAIM Systems project evaluating VR efficacy in land mine sweeping training.",
       "Supervised HDR students to develop lightweight Deep Learning models for edge computing.",
     ],
   },
   {
-    role: "Head Coach & Strategy Lead",
+    role: "Ultimate Frisbee Coach",
     company: "Victorian Representative Teams / Ultimate Victoria",
     period: "2021 - Present",
     type: "Passion Project",
     description:
-      "Ultimate Frisbee is my laboratory for leadership and analytics. I merge my technical skills with passion, using computer vision to extract biomechanical data (RFD, RSI) to give my teams a unique analytical edge.",
+      "Ultimate Frisbee is my laboratory for leadership and analytics. I merge my technical skills with passion, using computer vision to extract biomechanical data.",
     highlights: [
       "Head Coach for the 2023 Australian Under-22 Ultimate Championships.",
       "Recipient of the Ellipsis Coaching Scholarship for excellence in tactical development.",
-      "Implemented evidence-based training programs using video analytics to prevent injuries and optimize power output.",
+      "Implemented evidence-based training programs using video analytics.",
     ],
   },
 ];
@@ -90,7 +90,7 @@ export const projects = [
     partner: "Downer Group",
     tag: "Logistics Optimisation",
     description:
-      "Tackled a critical logistics challenge by transforming complex historical data into an optimized, predictive maintenance schedule. Used machine learning to forecast task durations and custom evolutionary algorithms to derive optimal schedules.",
+      "Tackled a critical logistics challenge by transforming complex historical data into an optimised, predictive maintenance schedule. Used machine learning to forecast task durations and custom evolutionary algorithms to derive optimal schedules.",
     tech: ["Predictive Modelling", "Evolutionary Algorithms", "Python"],
   },
   {
@@ -98,7 +98,7 @@ export const projects = [
     partner: "Ultimate Victoria",
     tag: "Sports Tech",
     description:
-      "Designed a performance platform using pose estimation to analyze athlete technique. Extracted biomechanical data points like Rate of Force Development (RFD) and Reactive Strength Index (RSI) to measure explosive power and agility.",
+      "Designed a performance platform using pose estimation to analyse athlete technique. Extracted biomechanical data points to measure explosive power and agility.",
     tech: ["Pose Estimation", "Biometrics", "Visual Analytics"],
   },
   {
@@ -106,7 +106,7 @@ export const projects = [
     partner: "FLAIM Systems",
     tag: "Defence / VR",
     description:
-      "Served as Lead Chief Investigator evaluating the efficacy of Virtual Reality in land mine sweeping training. Provided data-driven insights into how immersive technology can enhance or replace conventional training methods.",
+      "Served as Lead Chief Investigator evaluating the efficacy of Virtual Reality in land mine sweeping training. Provided data-driven insights into how immersive technology can enhance or support conventional training methods.",
     tech: ["Virtual Reality", "Data Analysis", "Human Factors"],
   },
 ];
@@ -117,7 +117,7 @@ export const capabilities = [
   "Deep Learning & Pose Estimation",
   "Multi-objective Optimisation",
   "Stakeholder Engagement & Workshop Facilitation",
-  "Biomechanical Data Analysis (RFD/RSI)",
+  "Biomechanical Data Analysis",
   "Strategic High-Performance Coaching"
 ];
 
@@ -128,7 +128,7 @@ export const philosophy = [
   },
   {
     title: "Develop a Transferable Skillset",
-    desc: "Core skills in AI and optimisation are universal. I've applied the same toolkit to predict train maintenance schedules, evaluate VR landmine training, and analyze athlete biomechanics."
+    desc: "Core skills in AI and optimisation are universal. I've applied the same toolkit to predict train maintenance schedules, evaluate VR landmine training, and analyse athlete biomechanics."
   },
   {
     title: "Integrate Your Passions",
@@ -144,9 +144,9 @@ export const talks = [
     topic: "AI-based Decision Support Systems"
   },
   {
-    title: "Unlocking the Dilemma of AI Existence",
-    venue: "Institut Teknologi Telkom Purwokerto",
-    date: "December 2023",
-    topic: "AI Capabilities and Limitations"
+    title: "Decision Support Systems for Rolling Stock Maintenance",
+    venue: "Telkom University Purwokerto Campus",
+    date: "June 2025",
+    topic: "AI-based Decision Support Systems"
   }
 ];
