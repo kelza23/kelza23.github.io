@@ -4,7 +4,7 @@ export const profile = {
   logo: "/logo.svg",
   motto: "Everything you don't know is something you can learn.",
   summary:
-    "I represent a new breed of researcher—combining deep academic expertise in Artificial Intelligence with a driving passion for creating tangible, real-world applications. My career is a playbook on translating theoretical knowledge into practical solutions that optimize complex systems, from high-speed rail networks to elite athletic performance.",
+    "I represent a new breed of researcher—combining deep academic expertise in Artificial Intelligence with a driving passion for creating tangible, real-world applications. My career is a playbook on translating theoretical knowledge into practical solutions that optimise complex systems, from high-speed rail networks to elite athletic performance.",
   email: "kelvinchoo_96@hotmail.com",
   linkedin: "kelvincyh",
   github: "kelza23",
