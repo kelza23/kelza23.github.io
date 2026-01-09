@@ -16,7 +16,7 @@ import {
   ExternalLink,
   Star
 } from 'lucide-react';
-import { profile, experience, aiSpecialties, projects, capabilities, philosophy, talks } from './content';
+import { profile, experience, aiSpecialties, projects, philosophy, talks } from './content';
 
 // ==========================================
 // ICON MAP
@@ -70,13 +70,15 @@ const App = () => {
       {/* Navbar */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div 
+          <button
+            type="button"
             className="text-xl font-bold tracking-tighter cursor-pointer flex items-center gap-2" 
             onClick={() => scrollToSection('home')}
+            aria-label="Scroll to top"
           >
             <div className="w-8 h-8 bg-blue-600 text-white flex items-center justify-center rounded-lg font-black text-xs">KC</div>
             <span>KELVIN<span className="text-blue-600">CHOO</span></span>
-          </div>
+          </button>
           <div className="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-500">
             {['Philosophy', 'Experience', 'Projects', 'Contact'].map((item) => (
               <button
@@ -121,8 +123,8 @@ const App = () => {
               </button>
               <div className="h-px w-10 bg-slate-300 hidden sm:block"></div>
               <div className="flex items-center space-x-4 text-slate-400">
-                <a href={`https://linkedin.com/in/${profile.linkedin}`} target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors p-2 hover:bg-blue-50 rounded-full"><Linkedin className="w-5 h-5"/></a>
-                <a href={`https://github.com/${profile.github}`} target="_blank" rel="noreferrer" className="hover:text-slate-900 transition-colors p-2 hover:bg-slate-100 rounded-full"><Github className="w-5 h-5"/></a>
+                <a href={`https://linkedin.com/in/${profile.linkedin}`} target="_blank" rel="noreferrer" aria-label="LinkedIn Profile" className="hover:text-blue-600 transition-colors p-2 hover:bg-blue-50 rounded-full"><Linkedin className="w-5 h-5"/></a>
+                <a href={`https://github.com/${profile.github}`} target="_blank" rel="noreferrer" aria-label="GitHub Profile" className="hover:text-slate-900 transition-colors p-2 hover:bg-slate-100 rounded-full"><Github className="w-5 h-5"/></a>
               </div>
             </div>
           </div>
@@ -243,7 +245,7 @@ const App = () => {
                     <span className="text-blue-400 text-xs font-bold uppercase tracking-widest mb-1 block">{project.partner}</span>
                     <h3 className="text-2xl font-bold group-hover:text-blue-100 transition-colors">{project.title}</h3>
                   </div>
-                  <div className="bg-slate-900 p-2 rounded-lg text-slate-400 group-hover:text-white transition-colors">
+                  <div className="bg-slate-900 p-2 rounded-lg text-slate-400 group-hover:text-white transition-colors" aria-hidden="true">
                     <ExternalLink className="w-5 h-5" />
                   </div>
                 </div>
