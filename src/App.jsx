@@ -71,8 +71,7 @@ const App = () => {
       <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <button
-            type="button"
-            className="text-xl font-bold tracking-tighter cursor-pointer flex items-center gap-2" 
+            className="text-xl font-bold tracking-tighter cursor-pointer flex items-center gap-2 hover:opacity-80 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
             onClick={() => scrollToSection('home')}
             aria-label="Scroll to top"
           >
@@ -125,6 +124,24 @@ const App = () => {
               <div className="flex items-center space-x-4 text-slate-400">
                 <a href={`https://linkedin.com/in/${profile.linkedin}`} target="_blank" rel="noreferrer" aria-label="LinkedIn Profile" className="hover:text-blue-600 transition-colors p-2 hover:bg-blue-50 rounded-full"><Linkedin className="w-5 h-5"/></a>
                 <a href={`https://github.com/${profile.github}`} target="_blank" rel="noreferrer" aria-label="GitHub Profile" className="hover:text-slate-900 transition-colors p-2 hover:bg-slate-100 rounded-full"><Github className="w-5 h-5"/></a>
+                <a
+                  href={`https://linkedin.com/in/${profile.linkedin}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Visit LinkedIn Profile"
+                  className="hover:text-blue-600 transition-colors p-2 hover:bg-blue-50 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                >
+                  <Linkedin className="w-5 h-5"/>
+                </a>
+                <a
+                  href={`https://github.com/${profile.github}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Visit GitHub Profile"
+                  className="hover:text-slate-900 transition-colors p-2 hover:bg-slate-100 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                >
+                  <Github className="w-5 h-5"/>
+                </a>
               </div>
             </div>
           </div>
