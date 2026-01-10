@@ -122,8 +122,6 @@ const App = () => {
               </button>
               <div className="h-px w-10 bg-slate-300 hidden sm:block"></div>
               <div className="flex items-center space-x-4 text-slate-400">
-                <a href={`https://linkedin.com/in/${profile.linkedin}`} target="_blank" rel="noreferrer" aria-label="LinkedIn Profile" className="hover:text-blue-600 transition-colors p-2 hover:bg-blue-50 rounded-full"><Linkedin className="w-5 h-5"/></a>
-                <a href={`https://github.com/${profile.github}`} target="_blank" rel="noreferrer" aria-label="GitHub Profile" className="hover:text-slate-900 transition-colors p-2 hover:bg-slate-100 rounded-full"><Github className="w-5 h-5"/></a>
                 <a
                   href={`https://linkedin.com/in/${profile.linkedin}`}
                   target="_blank"
