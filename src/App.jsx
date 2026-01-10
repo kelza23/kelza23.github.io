@@ -262,7 +262,7 @@ const App = () => {
                     <span className="text-blue-400 text-xs font-bold uppercase tracking-widest mb-1 block">{project.partner}</span>
                     <h3 className="text-2xl font-bold group-hover:text-blue-100 transition-colors">{project.title}</h3>
                   </div>
-                  <div className="bg-slate-900 p-2 rounded-lg text-slate-400 group-hover:text-white transition-colors">
+                  <div className="bg-slate-900 p-2 rounded-lg text-slate-400 group-hover:text-white transition-colors" aria-hidden="true">
                     <ExternalLink className="w-5 h-5" />
                   </div>
                 </div>
