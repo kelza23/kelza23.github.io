@@ -21,15 +21,7 @@ export const Projects = () => {
                         </p>
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="hidden md:block text-right bg-white/5 p-6 rounded-2xl border border-white/5 backdrop-blur-sm"
-                    >
-                        <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">{'>'}AUD 2M</div>
-                        <div className="text-xs uppercase tracking-widest text-zinc-500 font-bold mt-1">In Grants Secured</div>
-                    </motion.div>
+
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
