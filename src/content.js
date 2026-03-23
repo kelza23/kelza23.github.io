@@ -41,16 +41,29 @@ export const experience = [
     ],
   },
   {
-    role: "Coach & Founder",
-    company: "Ultimate Victoria / Kreatif Minds Studio",
+    role: "Ultimate Frisbee Coach",
+    company: "Victorian Representative Teams / Ultimate Victoria",
     period: "2021 — Present",
     type: "Passion Project",
     description:
-      "Head Coach for Victorian representative teams — integrating AI tools for biomechanical tracking and movement analysis. Founder of Kreatif Minds Studio, managing commercial photography for elite international events including the World Ultimate Championships 2024 and The World Games 2025.",
+      "Head Coach for Victorian representative teams, merging technical expertise with passion for sport. Integrates AI tools for biomechanical tracking and movement efficiency analysis to build evidence-based, high-performance training programs.",
     highlights: [
       "Head Coach for the 2023 Australian Under-22 Ultimate Championships.",
       "Recipient of the Ellipsis Coaching Scholarship for excellence in tactical development.",
-      "Founder of Kreatif Minds Studio — commercial operations for international sporting events.",
+      "Implemented AI-driven biomechanical tracking for performance analysis.",
+    ],
+  },
+  {
+    role: "Founder & Lead Photographer",
+    company: "Kreatif Minds Studio",
+    period: "2024 — Present",
+    type: "Commercial Venture",
+    description:
+      "Founder and operator of a commercial photography studio specialising in elite international sporting events. Manages end-to-end commercial operations from accreditation and logistics to post-production delivery.",
+    highlights: [
+      "Official photographer for the World Ultimate Championships 2024.",
+      "Engaged for The World Games 2025 coverage.",
+      "Manages independent commercial operations and client relationships.",
     ],
   },
 ];
