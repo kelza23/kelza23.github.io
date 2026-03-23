@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../content';
-import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export const Projects = () => {
     return (
@@ -20,8 +20,6 @@ export const Projects = () => {
                             Highlighting projects where AI theory met real-world constraints to deliver measurable value.
                         </p>
                     </motion.div>
-
-
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
@@ -32,19 +30,35 @@ export const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.1 }}
                             viewport={{ once: true }}
-                            className="group relative bg-zinc-900/50 rounded-3xl p-8 hover:bg-zinc-900 transition-all border border-white/5 hover:border-blue-500/30 overflow-hidden"
+                            className={`group relative bg-zinc-900/50 rounded-3xl p-8 hover:bg-zinc-900 transition-all border border-white/5 ${project.accent.border} overflow-hidden`}
+                            style={{
+                                '--hover-glow': project.accent.glow,
+                            }}
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <div className={`absolute inset-0 bg-gradient-to-br ${project.accent.gradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                             <div className="relative z-10 flex flex-col h-full">
                                 <div className="flex justify-between items-start mb-6">
                                     <div>
-                                        <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-3 border border-blue-500/20">
+                                        {/* Partner badge */}
+                                        <span className={`inline-block py-1 px-3 rounded-full text-[10px] font-bold uppercase tracking-widest mb-2 border ${project.accent.tag}`}>
                                             {project.partner}
                                         </span>
-                                        <h3 className="text-3xl font-bold text-white group-hover:text-blue-200 transition-colors tracking-tight">{project.title}</h3>
+                                        {/* Tag & Funding row */}
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">
+                                                {project.tag}
+                                            </span>
+                                            {project.funding && (
+                                                <>
+                                                    <span className="text-zinc-700 text-[10px]">·</span>
+                                                    <span className="text-[10px] font-bold text-zinc-400 font-mono">{project.funding}</span>
+                                                </>
+                                            )}
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white group-hover:text-zinc-100 transition-colors tracking-tight">{project.title}</h3>
                                     </div>
-                                    <div className="p-3 bg-white/5 rounded-full text-zinc-400 group-hover:text-white group-hover:bg-blue-500 transition-all duration-300 transform group-hover:rotate-45" aria-hidden="true">
+                                    <div className={`p-3 bg-white/5 rounded-full text-zinc-400 group-hover:text-white ${project.accent.icon} transition-all duration-300 transform group-hover:rotate-45 shrink-0 ml-4`} aria-hidden="true">
                                         <ArrowUpRight className="w-5 h-5" />
                                     </div>
                                 </div>
@@ -55,7 +69,7 @@ export const Projects = () => {
 
                                 <div className="flex flex-wrap gap-2 mt-auto">
                                     {project.tech.map((t, i) => (
-                                        <span key={i} className="text-[10px] font-bold text-zinc-300 bg-white/5 px-3 py-1.5 rounded-full border border-white/5 group-hover:border-white/10 transition-colors">
+                                        <span key={i} className={`text-[10px] font-bold px-3 py-1.5 rounded-full border transition-colors ${project.accent.tagFixed} opacity-70 group-hover:opacity-100`}>
                                             {t}
                                         </span>
                                     ))}

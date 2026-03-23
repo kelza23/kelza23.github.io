@@ -5,7 +5,7 @@ import { Mic } from 'lucide-react';
 
 export const Talks = () => {
     return (
-        <section className="py-24 bg-zinc-950 border-t border-white/5 relative">
+        <section id="talks" className="py-24 bg-zinc-950 border-t border-white/5 relative">
             <div className="container mx-auto px-6">
                 <div className="flex items-center mb-16 space-x-6">
                     <div className="h-px bg-zinc-800 flex-1"></div>

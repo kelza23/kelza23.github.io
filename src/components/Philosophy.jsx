@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { philosophy } from '../content';
+import { philosophy, profile } from '../content';
 import { Briefcase, Lightbulb, Trophy } from 'lucide-react';
 
 export const Philosophy = () => {
@@ -16,7 +16,7 @@ export const Philosophy = () => {
                     className="text-center max-w-2xl mx-auto mb-16"
                 >
                     <h2 className="text-3xl font-black text-white mb-4">The Modern Researcher's Playbook</h2>
-                    <p className="text-zinc-400 italic">"Everything you don't know is something you can learn."</p>
+                    <p className="text-zinc-400 italic">"{profile.motto}"</p>
                 </motion.div>
 
                 <div className="grid md:grid-cols-3 gap-8">
