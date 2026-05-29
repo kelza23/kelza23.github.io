@@ -1,38 +1,83 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { talks } from '../content';
+import { talks, techStack } from '../content';
 import { Mic } from 'lucide-react';
 
 export const Talks = () => {
     return (
-        <section id="talks" className="py-24 bg-zinc-950 border-t border-white/5 relative">
-            <div className="container mx-auto px-6">
-                <div className="flex items-center mb-16 space-x-6">
-                    <div className="h-px bg-zinc-800 flex-1"></div>
-                    <h2 className="text-sm font-black uppercase tracking-widest text-zinc-500 flex items-center gap-3">
-                        <span className="p-2 bg-zinc-900 rounded-lg"><Mic className="w-4 h-4 text-blue-500" /></span>
-                        Speaking & Thought Leadership
-                    </h2>
-                    <div className="h-px bg-zinc-800 flex-1"></div>
-                </div>
+        <section id="talks" className="py-24 border-t border-white/5" style={{ background: 'var(--ink)' }}>
+            <div className="content-wrap">
+                {/* Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-12"
+                >
+                    <p className="text-[11px] text-blue-500 tracking-[0.2em] uppercase mb-4">// Speaking</p>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white">Talks &amp; Thought Leadership</h2>
+                </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-8">
+                {/* Talk list — table-style, not cards */}
+                <div className="divide-y divide-white/5 mb-16">
                     {talks.map((talk, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: idx * 0.1 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: idx * 0.06 }}
                             viewport={{ once: true }}
-                            className="group flex flex-col items-center text-center p-10 bg-zinc-900/30 hover:bg-zinc-900 rounded-3xl border border-white/5 hover:border-white/10 transition-all duration-500"
+                            className="group flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 py-5 hover:bg-white/[0.02] transition-colors px-2 -mx-2 rounded"
                         >
-                            <span className="text-[10px] font-black text-blue-400 uppercase mb-4 bg-blue-500/10 px-4 py-1.5 rounded-full border border-blue-500/10">{talk.date}</span>
-                            <h4 className="font-bold text-xl mb-3 text-white group-hover:text-blue-200 transition-colors">{talk.title}</h4>
-                            <p className="text-sm text-zinc-400 font-medium mb-1">{talk.venue}</p>
-                            <p className="text-xs text-zinc-600 uppercase tracking-wide">{talk.topic}</p>
+                            <span className="text-[11px] text-blue-400 tracking-widest uppercase shrink-0 w-24">{talk.date}</span>
+                            <div className="flex-1 min-w-0">
+                                <h4 className="text-[13px] font-bold text-zinc-200 group-hover:text-white transition-colors mb-0.5">
+                                    {talk.title}
+                                </h4>
+                                <p className="text-[11px] text-zinc-600 uppercase tracking-wide">{talk.venue}</p>
+                            </div>
+                            <span className="text-[10px] text-zinc-700 uppercase tracking-wider shrink-0 hidden sm:block">{talk.topic}</span>
                         </motion.div>
                     ))}
                 </div>
+
+                {/* Credentials — two columns */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="pt-12 border-t border-white/5 grid sm:grid-cols-2 gap-10"
+                >
+                    <div>
+                        <p className="text-[10px] text-zinc-600 uppercase tracking-widest mb-5">Certifications</p>
+                        <ul className="space-y-2">
+                            {techStack.certifications.map((c, i) => (
+                                <li key={i} className="flex items-center gap-2 text-[12px] text-zinc-500">
+                                    <span className="w-1 h-1 rounded-full bg-blue-600 shrink-0" />
+                                    {c}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <p className="text-[10px] text-zinc-600 uppercase tracking-widest mb-5">Memberships &amp; Languages</p>
+                        <ul className="space-y-2 mb-5">
+                            {techStack.memberships.map((m, i) => (
+                                <li key={i} className="flex items-center gap-2 text-[12px] text-zinc-500">
+                                    <span className="w-1 h-1 rounded-full bg-blue-600 shrink-0" />
+                                    {m}
+                                </li>
+                            ))}
+                        </ul>
+                        <div className="flex flex-wrap gap-2">
+                            {techStack.languages.map((l, i) => (
+                                <span key={i} className="text-[11px] text-zinc-500 border border-white/5 px-2.5 py-1 rounded">
+                                    {l}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

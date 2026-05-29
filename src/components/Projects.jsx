@@ -1,81 +1,105 @@
-import React from 'react';
+import React, { useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../content';
 import { ArrowUpRight } from 'lucide-react';
 
-export const Projects = () => {
-    return (
-        <section id="projects" className="py-32 bg-zinc-950 relative">
-            <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
+const GlowCard = ({ project, idx }) => {
+    const cardRef = useRef(null);
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                    >
-                        <h2 className="text-4xl font-black text-white mb-4">Tangible Impact.</h2>
-                        <p className="text-zinc-400 max-w-xl text-lg">
-                            Highlighting projects where AI theory met real-world constraints to deliver measurable value.
-                        </p>
-                    </motion.div>
+    const onMove = useCallback((e) => {
+        const card = cardRef.current;
+        if (!card) return;
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+        card.style.setProperty('--my', `${e.clientY - r.top}px`);
+        card.style.setProperty('--gc', project.accent.glow);
+    }, [project.accent.glow]);
+
+    const onLeave = useCallback(() => {
+        cardRef.current?.style.removeProperty('--mx');
+        cardRef.current?.style.removeProperty('--my');
+    }, []);
+
+    return (
+        <motion.div
+            ref={cardRef}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.08 }}
+            viewport={{ once: true }}
+            onMouseMove={onMove}
+            onMouseLeave={onLeave}
+            className={`group relative rounded border border-white/5 ${project.accent.border} overflow-hidden transition-colors duration-300 p-6`}
+            style={{ background: 'var(--ink-2)' }}
+        >
+            {/* Mouse-tracking glow */}
+            <div className="pointer-events-none absolute -inset-px rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: 'radial-gradient(400px circle at var(--mx,50%) var(--my,50%), var(--gc,transparent), transparent 50%)' }} />
+
+            <div className="relative z-10 flex flex-col h-full">
+                {/* Top row */}
+                <div className="flex items-start justify-between mb-4">
+                    <div>
+                        <span className={`inline-block text-[10px] uppercase tracking-widest px-2 py-0.5 rounded border mb-2 ${project.accent.tagFixed}`}>
+                            {project.tag}
+                        </span>
+                        <h3 className="text-[14px] font-bold text-white leading-snug">{project.title}</h3>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-zinc-700 group-hover:text-zinc-400 shrink-0 ml-4 mt-0.5 group-hover:rotate-45 transition-all duration-300" />
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
+                {/* Partner & funding */}
+                <p className="text-[11px] text-zinc-600 mb-1 uppercase tracking-wide">{project.partner}</p>
+                {project.funding && (
+                    <p className="text-[11px] text-zinc-400 font-bold mb-4">{project.funding}</p>
+                )}
+
+                {/* Description */}
+                <p className="text-[12px] text-zinc-500 leading-loose flex-grow mb-5 group-hover:text-zinc-400 transition-colors">
+                    {project.description}
+                </p>
+
+                {/* Tech chips */}
+                <div className="flex flex-wrap gap-1.5 mt-auto">
+                    {project.tech.map((t, i) => (
+                        <span key={i} className={`text-[10px] px-2 py-1 rounded border ${project.accent.tagFixed} opacity-50 group-hover:opacity-100 transition-opacity`}>
+                            {t}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </motion.div>
+    );
+};
+
+export const Projects = () => {
+    return (
+        <section id="projects" className="py-24 border-t border-white/5" style={{ background: 'var(--ink-3)' }}>
+            <div className="content-wrap">
+                {/* Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12"
+                >
+                    <div>
+                        <p className="text-[11px] text-blue-500 tracking-[0.2em] uppercase mb-4">// Portfolio</p>
+                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Tangible Impact</h2>
+                        <p className="text-sm text-zinc-500">
+                            AI theory meeting real-world constraints.
+                        </p>
+                    </div>
+                    <div className="shrink-0 text-right">
+                        <p className="text-[10px] text-zinc-600 uppercase tracking-widest mb-1">Total Funding</p>
+                        <p className="text-xl font-bold text-blue-400">&gt; AUD 2,500,000</p>
+                    </div>
+                </motion.div>
+
+                {/* Grid */}
+                <div className="grid md:grid-cols-2 gap-4">
                     {projects.map((project, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: idx * 0.1 }}
-                            viewport={{ once: true }}
-                            className={`group relative bg-zinc-900/50 rounded-3xl p-8 hover:bg-zinc-900 transition-all border border-white/5 ${project.accent.border} overflow-hidden`}
-                            style={{
-                                '--hover-glow': project.accent.glow,
-                            }}
-                        >
-                            <div className={`absolute inset-0 bg-gradient-to-br ${project.accent.gradient} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-
-                            <div className="relative z-10 flex flex-col h-full">
-                                <div className="flex justify-between items-start mb-6">
-                                    <div>
-                                        {/* Partner badge */}
-                                        <span className={`inline-block py-1 px-3 rounded-full text-[10px] font-bold uppercase tracking-widest mb-2 border ${project.accent.tag}`}>
-                                            {project.partner}
-                                        </span>
-                                        {/* Tag & Funding row */}
-                                        <div className="flex items-center gap-3 mb-3">
-                                            <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500">
-                                                {project.tag}
-                                            </span>
-                                            {project.funding && (
-                                                <>
-                                                    <span className="text-zinc-700 text-[10px]">·</span>
-                                                    <span className="text-[10px] font-bold text-zinc-400 font-mono">{project.funding}</span>
-                                                </>
-                                            )}
-                                        </div>
-                                        <h3 className="text-2xl font-bold text-white group-hover:text-zinc-100 transition-colors tracking-tight">{project.title}</h3>
-                                    </div>
-                                    <div className={`p-3 bg-white/5 rounded-full text-zinc-400 group-hover:text-white ${project.accent.icon} transition-all duration-300 transform group-hover:rotate-45 shrink-0 ml-4`} aria-hidden="true">
-                                        <ArrowUpRight className="w-5 h-5" />
-                                    </div>
-                                </div>
-
-                                <p className="text-zinc-400 mb-8 leading-relaxed text-sm flex-grow">
-                                    {project.description}
-                                </p>
-
-                                <div className="flex flex-wrap gap-2 mt-auto">
-                                    {project.tech.map((t, i) => (
-                                        <span key={i} className={`text-[10px] font-bold px-3 py-1.5 rounded-full border transition-colors ${project.accent.tagFixed} opacity-70 group-hover:opacity-100`}>
-                                            {t}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        </motion.div>
+                        <GlowCard key={idx} project={project} idx={idx} />
                     ))}
                 </div>
             </div>

@@ -1,39 +1,51 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { philosophy, profile } from '../content';
-import { Briefcase, Lightbulb, Trophy } from 'lucide-react';
+
+const NUMS = ['01', '02', '03'];
 
 export const Philosophy = () => {
     return (
-        <section id="philosophy" className="py-24 bg-zinc-900 border-y border-white/5 relative overflow-hidden">
-            <div className="absolute inset-0 bg-zinc-950/50" />
-
-            <div className="container mx-auto px-6 relative z-10">
+        <section id="philosophy" className="py-24 border-t border-white/5" style={{ background: 'var(--ink-2)' }}>
+            <div className="content-wrap">
+                {/* Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center max-w-2xl mx-auto mb-16"
+                    className="mb-16"
                 >
-                    <h2 className="text-3xl font-black text-white mb-4">The Modern Researcher's Playbook</h2>
-                    <p className="text-zinc-400 italic">"{profile.motto}"</p>
+                    <p className="text-[11px] text-blue-500 tracking-[0.2em] uppercase mb-4">// Principles</p>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+                        The Modern Researcher's Playbook
+                    </h2>
+                    <p className="text-sm text-zinc-500 italic max-w-xl leading-relaxed border-l-2 border-blue-600/30 pl-4">
+                        &ldquo;{profile.motto}&rdquo;
+                    </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                {/* Cards */}
+                <div className="grid md:grid-cols-3 gap-px" style={{ background: 'var(--border)' }}>
                     {philosophy.map((item, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: idx * 0.1 }}
+                            transition={{ delay: idx * 0.08 }}
                             viewport={{ once: true }}
-                            className="group bg-white/5 p-8 rounded-2xl border border-white/5 hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300"
+                            className="group relative p-8 transition-colors duration-300 hover:bg-white/[0.02]"
+                            style={{ background: 'var(--ink-2)' }}
                         >
-                            <div className="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                {idx === 0 ? <Briefcase className="w-6 h-6" /> : idx === 1 ? <Lightbulb className="w-6 h-6" /> : <Trophy className="w-6 h-6" />}
-                            </div>
-                            <h3 className="font-bold text-xl mb-3 text-white group-hover:text-blue-400 transition-colors">{item.title}</h3>
-                            <p className="text-sm text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors">{item.desc}</p>
+                            {/* Accent bar */}
+                            <div className="absolute left-0 top-6 bottom-6 w-[2px] bg-transparent group-hover:bg-blue-600/50 transition-colors duration-300" />
+
+                            <span className="text-[10px] text-zinc-700 tracking-widest uppercase block mb-5">{NUMS[idx]}</span>
+                            <h3 className="text-[13px] font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
+                                {item.title}
+                            </h3>
+                            <p className="text-[12px] text-zinc-500 leading-loose group-hover:text-zinc-400 transition-colors">
+                                {item.desc}
+                            </p>
                         </motion.div>
                     ))}
                 </div>
